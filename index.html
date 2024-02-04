@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ph Tube</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+    <nav class=" border-b-2">
+        <div class="nav-container md:container md:mx-auto">
+            <div class="navbar bg-base-100 py-6">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+
+                    </div>
+                    <a class="btn btn-ghost text-xl"><img src="./Logo.png" alt=""></a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <a class="btn bg-red-400 text-white" onclick="handleSortView()" id="sort-btn">Sort By View</a>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn bg-red-400 text-white">Blog</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="tab-container">
+            <div role="tablist" class="tabs tabs-boxed flex justify-center flex-wrap lg:my-14 my-8 bg-white"
+                id="tab-container">
+
+            </div>
+
+            <div class="ph-tube-card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-8 gap-8"
+                id="ph-tube-card-container">
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
