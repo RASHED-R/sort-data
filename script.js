@@ -54,14 +54,7 @@ const handleShowCategories = async (categoryId) => {
 
     loadView(dataList);
 
-    // const eH3 = document.createElement('h3');
 
-    // if (phTubeCategories.length == 0) {
-    //     // console.log(phTubeCategories);
-
-    //     eH3.innerHTML = "no data found";
-    //     phTubeCardContainer.appendChild(eH3);
-    // }
 };
 const loadView = (data) => {
 
@@ -108,6 +101,18 @@ const loadView = (data) => {
 
         phTubeCardContainer.appendChild(div);
     });
+    const errContainer = document.getElementById('err-container');
+
+    if (data.length == 0) {
+        // console.log(data);
+
+        errContainer.innerHTML = `
+            <div class=" flex justify-center items-center gap-4">
+                    <img src="Icon.png" alt="">
+                    <p class = ' text-xl font-bold'> Oop! No Data Found</p>
+            </div>
+        `
+    }
 }
 const formatPostedDate = (postedDate) => {
     // Check if postedDate is not available, empty, or NaN
@@ -132,7 +137,7 @@ const handleSortView = () => {
     const sortData = dataList?.sort(function (a, b) {
         const modA = parseFloat(a.others.views.replace('K', '')) || 0;
         const modB = parseFloat(b.others.views.replace('K', '')) || 0;
-        return modA - modB;
+        return modB - modA;
     });
 
     loadView(sortData);
